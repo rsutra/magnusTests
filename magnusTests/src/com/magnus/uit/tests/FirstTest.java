@@ -3,17 +3,20 @@ package com.magnus.uit.tests;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class FirstTest {
 //
 	public static void main(String[] args) {
 		// declaration and instantiation of objects/variables
-    	System.setProperty("webdriver.gecko.driver","E:\\Jala\\Selenium\\downloads\\drivers\\geckodriver.exe");
+		//This is your project path => E:\\Jala\\projects\\repos\\magnusTests
+		String projectPath = "E:\\Jala\\projects\\repos\\magnusTests";
+    	System.setProperty("webdriver.gecko.driver", projectPath+"\\magnusTests\\drivers\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
 		//comment the above 2 lines and uncomment below 2 lines to use Chrome
-		//System.setProperty("webdriver.chrome.driver","G:\\chromedriver.exe");
-		//WebDriver driver = new ChromeDriver();
+//		System.setProperty("webdriver.chrome.driver",projectPath+"\\magnusTests\\drivers\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
 		
 		//Puts an Implicit wait, Will wait for 10 seconds before throwing exception
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
